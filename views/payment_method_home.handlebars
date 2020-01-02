@@ -1,0 +1,49 @@
+<h2>Payment_menthod</h2>
+
+<form id="addForm">
+    cardNumber:
+    <input type="text" name="cardNumber" id="cardNumberInput"><br>
+    cardCvc:
+    <input type="number" name="cardCvc" id="cardCvcInput"><br>
+	cardName:
+    <input type="text" name="cardName" id="cardNameInput"><br>
+	addressLine1:
+    <input type="text" name="addressLine1" id="addressLine1Input"><br>
+	city:
+    <input type="text" name="city" id="cityInput"><br>
+	state:
+    <input type="text" name="state" id="stateInput"><br>
+	zip:
+    <input type="text" name="zip" id="zipInput"><br>
+    <input type="submit" name="add" value = "Add" id="addButton">
+</form>
+
+<br>
+
+<table id="showTable">
+    <tr>
+        <th>cardNumber</th>
+        <th>cardCvc</th>
+		<th>cardName</th>
+		<th>addressLine1</th>
+		<th>city</th>
+		<th>state</th>
+		<th>zip</th>
+    </tr>
+    
+    {{#if results}}
+        {{#each results}}
+            <tr>
+                <td>{{this.cardNumber}}</td>
+                <td>{{this.cardCvc}}</td>
+				<td>{{this.cardName}}</td>
+				<td>{{this.addressLine1}}</td>
+				<td>{{this.city}}</td>
+				<td>{{this.state}}</td>
+				<td>{{this.zip}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+</table>
+
+<script src="./payment_method_script.js"></script>

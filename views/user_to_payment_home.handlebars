@@ -1,0 +1,33 @@
+<h2>User_to_payment</h2>
+
+<form id="addForm">
+    userId:
+    <input type="number" name="userId" id="userIdInput"><br>
+    paymentMethodId:
+    <input type="number" name="paymentMethodId" id="paymentMethodIdInput"><br>
+    <input type="submit" name="add" value = "Add" id="addButton">
+</form>
+
+<br>
+
+<table id="showTable">
+    <tr>
+        <th>userId</th>
+        <th>paymentMethodId</th>
+    </tr>
+    
+    {{#if results}}
+        {{#each results}}
+            <tr>
+                <td>{{this.userId}}</td>
+                <td>{{this.paymentMethodId}}</td>
+                <td>
+				<input type="button" name="delete" value="Delete" onClick="deleteData(this,{{this.id}})">
+				<input type="hidden" value={{this.id}}>
+				</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+</table>
+
+<script src="./user_to_payment_script.js"></script>

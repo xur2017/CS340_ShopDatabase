@@ -1,0 +1,41 @@
+<h2>Product</h2>
+
+<form id="addForm">
+    productDescription:
+    <input type="text" name="productDescription" id="productDescriptionInput"><br>
+    productLocation:
+    <input type="text" name="productLocation" id="productLocationInput"><br>
+	unitCost:
+    <input type="number" name="unitCost" id="unitCostInput"><br>
+	unitPrice:
+    <input type="number" name="unitPrice" id="unitPriceInput"><br>
+    <input type="submit" name="add" value = "Add" id="addButton">
+</form>
+
+<br>
+
+<table id="showTable">
+    <tr>
+        <th>productDescription</th>
+        <th>productLocation</th>
+		<th>unitCost</th>
+		<th>unitPrice</th>
+    </tr>
+    
+    {{#if results}}
+        {{#each results}}
+            <tr>
+                <td>{{this.productDescription}}</td>
+                <td>{{this.productLocation}}</td>
+				<td>{{this.unitCost}}</td>
+				<td>{{this.unitPrice}}</td>
+                <td>
+				<input type="button" name="delete" value="Delete" onClick="deleteData(this,{{this.id}})">
+				<input type="hidden" value={{this.id}}>
+				</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+</table>
+
+<script src="./product_script.js"></script>

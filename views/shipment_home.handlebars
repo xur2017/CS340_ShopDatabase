@@ -1,0 +1,45 @@
+<h2>Shipment</h2>
+
+<form id="addForm">
+    orderId:
+    <input type="number" name="orderId" id="orderIdInput"><br>
+    trackingNumber:
+    <input type="text" name="trackingNumber" id="trackingNumberInput"><br>
+	addressLine1:
+    <input type="text" name="addressLine1" id="addressLine1Input"><br>
+	city:
+    <input type="text" name="city" id="cityInput"><br>
+	state:
+    <input type="text" name="state" id="stateInput"><br>
+	zip:
+    <input type="text" name="zip" id="zipInput"><br>
+    <input type="submit" name="add" value = "Add" id="addButton">
+</form>
+
+<br>
+
+<table id="showTable">
+    <tr>
+        <th>orderId</th>
+        <th>trackingNumber</th>
+		<th>addressLine1</th>
+		<th>city</th>
+		<th>state</th>
+		<th>zip</th>
+    </tr>
+    
+    {{#if results}}
+        {{#each results}}
+            <tr>
+                <td>{{this.orderId}}</td>
+                <td>{{this.trackingNumber}}</td>
+				<td>{{this.addressLine1}}</td>
+				<td>{{this.city}}</td>
+				<td>{{this.state}}</td>
+				<td>{{this.zip}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+</table>
+
+<script src="./shipment_script.js"></script>

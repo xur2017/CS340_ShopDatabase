@@ -1,0 +1,14 @@
+<h2>Shop_user</h2>
+
+<form action="/shop_user_update2" method="get">
+    firstName:
+    <input type="text" name="firstName" id="firstNameInput" value={{results.firstName}}><br>
+    lastName:
+    <input type="text" name="lastName" id="lastNameInput" value={{results.lastName}}><br>
+    phone:
+    <input type="text" name="phone" id="phoneInput", value={{results.phone}}><br>
+    email:
+    <input type="text" name="email" id="emailInput", value={{results.email}}><br>
+    <input type="hidden" name="id" value={{results.id}}>
+    <input type="submit" name="update" value="Update" id="updateButton">
+</form>

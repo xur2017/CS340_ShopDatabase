@@ -1,0 +1,33 @@
+<h2>Search order by name</h2>
+
+<form id="addForm">
+    firstName:
+    <input type="text" name="firstName" id="firstNameInput"><br>
+    lastName:
+    <input type="text" name="lastName" id="lastNameInput"><br>
+    <input type="submit" name="add" value = "Add" id="addButton">
+</form>
+
+<br>
+
+<table id="showTable">
+    <tr>
+        <th>firstName</th>
+        <th>lastName</th>
+		<th>orderDate</th>
+		<th>orderId</th>
+    </tr>
+    
+    {{#if results}}
+        {{#each results}}
+            <tr>
+                <td>{{this.firstName}}</td>
+                <td>{{this.lastName}}</td>
+				<td>{{this.orderDate}}</td>
+                <td>{{this.orderId}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+</table>
+
+<script src="./search_order_by_name_script.js"></script>

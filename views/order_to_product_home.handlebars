@@ -1,0 +1,33 @@
+<h2>Order_to_product</h2>
+
+<form id="addForm">
+    orderId:
+    <input type="number" name="orderId" id="orderIdInput"><br>
+    productId:
+    <input type="number" name="productId" id="productIdInput"><br>
+	quantity:
+    <input type="number" name="quantity" id="quantityInput"><br>
+    <input type="submit" name="add" value = "Add" id="addButton">
+</form>
+
+<br>
+
+<table id="showTable">
+    <tr>
+        <th>orderId</th>
+        <th>productId</th>
+		<th>quantity</th>
+    </tr>
+    
+    {{#if results}}
+        {{#each results}}
+            <tr>
+                <td>{{this.orderId}}</td>
+                <td>{{this.productId}}</td>
+				<td>{{this.quantity}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+</table>
+
+<script src="./order_to_product_script.js"></script>

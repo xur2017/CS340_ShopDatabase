@@ -1,0 +1,27 @@
+<h2>Filter_tracking_number_by_order</h2>
+
+<form id="addForm" action="/tracking_by_order_filter">
+	orderId:
+    <input type="number" name="orderId" id="orderIdInput"><br>
+    <input type="submit" name="add" value = "Filter" id="addButton">
+</form>
+
+<br>
+
+<table id="showTable">
+    <tr>
+        <th>trackingNumber</th>
+        <th>orderId</th>
+        <th>orderDate</th>
+    </tr>
+    
+    {{#if results}}
+        {{#each results}}
+            <tr>
+                <td>{{this.trackingNumber}}</td>
+                <td>{{this.orderId}}</td>
+                <td>{{this.orderDate}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+</table>

@@ -1,0 +1,20 @@
+<h2>Update an exercise</h2>
+
+<form action="/updateReturn" method="get">
+    Name:
+    <input type="text" name="name" id="nameInput" value="{{results.name}}"><br>
+    Reps:
+    <input type="number" name="reps" id="repsInput" value="{{results.reps}}"><br>
+    Weight:
+    <input type="number" name="weight" id="weightInput" value="{{results.weight}}"><br>
+    Date:
+    <input type="date" name="date" id="dateInput" value="{{results.date}}"><br>
+    LBS:
+    {{#if results.unitChecked}}
+		<input type="checkbox" name="unit" id="unitInput" checked=true><br>
+	{{else}}
+		<input type="checkbox" name="unit" id="unitInput"><br>
+    {{/if}}
+    <input type="hidden" name="id" value={{results.id}}>
+    <input type="submit" name="update" value="Update" id="updateButton">
+</form>

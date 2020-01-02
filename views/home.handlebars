@@ -1,0 +1,39 @@
+<h2>Add an exercise</h2>
+
+<form id="addForm">
+    firstName:
+    <input type="text" name="firstName" id="firstNameInput"><br>
+    lastName:
+    <input type="text" name="lastName" id="lastNameInput"><br>
+    phone:
+    <input type="text" name="phone" id="phoneInput"><br>
+    email:
+    <input type="text" name="email" id="emailInput"><br>
+    <input type="submit" name="add" value = "Add" id="addButton">
+</form>
+
+<br>
+
+<table id="showTable">
+    <tr>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>phone</th>
+        <th>email</th>
+        <th>Update</th>
+    </tr>
+    
+    {{#if results}}
+        {{#each results}}
+            <tr>
+                <td>{{this.firstName}}</td>
+                <td>{{this.lastName}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.email}}</td>
+                <td><a href="/updateTable?id={{this.id}}"><input type="button" value="Update"></a></td>
+            </tr>
+        {{/each}}
+    {{/if}}
+</table>
+
+<script src="./script.js"></script>

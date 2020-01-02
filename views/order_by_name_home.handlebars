@@ -1,0 +1,31 @@
+<h2>Filter_order_by_name</h2>
+
+<form id="addForm" action="/order_by_name_filter">
+    firstName:
+    <input type="text" name="firstName" id="firstNameInput"><br>
+    lastName:
+    <input type="text" name="lastName" id="lastNameInput"><br>
+    <input type="submit" name="add" value = "Filter" id="addButton">
+</form>
+
+<br>
+
+<table id="showTable">
+    <tr>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>orderId</th>
+        <th>orderDate</th>
+    </tr>
+    
+    {{#if results}}
+        {{#each results}}
+            <tr>
+                <td>{{this.firstName}}</td>
+                <td>{{this.lastName}}</td>
+                <td>{{this.orderId}}</td>
+                <td>{{this.orderDate}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+</table>
